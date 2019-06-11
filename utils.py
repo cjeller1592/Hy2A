@@ -3,9 +3,12 @@ import code
 
 import requests
 
+# FILL OUT THESE VARS BEFORE USING
 # Put your Are.na and Hypothes.is tokens here
 atoken = ''
 htoken = ''
+# Put in your Hypothes.is user name here
+user = ''
 
 ###### ARE.NA
 
@@ -50,7 +53,7 @@ def getAll():
     list = []
     url = 'https://api.hypothes.is/api/search'
     params = {'limit': 100,
-            'user': 'acct:CJEller1592@hypothes.is'}
+            'user': 'acct:%s@hypothes.is' % user}
     r = requests.get(url, headers={'Authorization': 'Bearer %s' % htoken,
                         'Content-Type':'application/json'},
                         params=params)
@@ -85,7 +88,7 @@ def getTA(tag):
     list = []
     url = 'https://api.hypothes.is/api/search'
     params = {'limit': 100,
-            'user': 'acct:CJEller1592@hypothes.is',
+            'user': 'acct:%s@hypothes.is' % user,
             'tag': tag}
     r = requests.get(url, headers={'Authorization': 'Bearer %s' % htoken,
                         'Content-Type':'application/json'},
