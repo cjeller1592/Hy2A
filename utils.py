@@ -79,3 +79,21 @@ def search(resource):
 			results.append(annotation)
 
 	return results
+
+# This is how we grab your annotations that belong to a certain tag
+def getTA(tag):
+    list = []
+    url = 'https://api.hypothes.is/api/search'
+    params = {'limit': 100,
+            'user': 'acct:CJEller1592@hypothes.is',
+            'tag': tag}
+    r = requests.get(url, headers={'Authorization': 'Bearer %s' % htoken,
+                        'Content-Type':'application/json'},
+                        params=params)
+
+    annotations = r.json()['rows']
+
+    for annotation in annotations:
+        list.append(annotation)
+
+    return list
