@@ -7,21 +7,21 @@ A way to move your Hypothes.is annotations to an Are.na Channel
 
 What I wanted to do was have a way to take annotations from an article and house them in an Are.na channel. That way I could visually organize and connect these annotations across resources.
 
-This code is a by-product of that want. It is currently organized so that you make an Are.na channel of the annotations for a specific resource (blog post, article, pdf, etc).
+This code is a by-product of that want. It is currently organized so that you make an Are.na channel of the annotations for a  resource (blog post, article, pdf, etc) or a tag.
 
 ### How to use
 
 - Clone the repo.
 
-- Put in your Hypothes.is and Are.na access tokens in the utils.py file. You can find these in your account from the developer sections from each.
+- Put in your Hypothes.is and Are.na access tokens in the utils.py file. You can find these in your account from the developer sections from each. Put in your Hypothes.is username as well.
 
-- Pull up a Python console and get going! 
+- Save the file, pull up a Python console and get going! 
 
 ```
 > from app import main
 
 # Use the title provided by Hypothes.is as the argument
-> main('Thought as a Technology')
+> res('Thought as a Technology')
 
 # Check Are.na to see the results!
 > 'See if it worked!'
